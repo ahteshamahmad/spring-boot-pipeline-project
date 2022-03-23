@@ -22,6 +22,7 @@ public class UserDatabase {
         mentor.add("Deepak Kumar");
         mentor.add("Jayanta Mukherjee");
         mentor.add("Suman Das");
+        mentor.add("Google");
         return mentor;
     }
     @GetMapping("/HR")
