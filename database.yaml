@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: ARCdatabase
-          image: ahteshamdocker/app
+          image: ahteshamdocker/pipeline-app
           ports:
             - containerPort: 8100
           imagePullPolicy: Never
