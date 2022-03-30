@@ -1,1 +1,1 @@
-# spring-boot-pipeline-project
+# spring-boot-project

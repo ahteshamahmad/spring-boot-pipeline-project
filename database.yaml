@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ARCdatabase
+spec:
+  selector:
+    app: collegedatabase
+  ports:
+    - port: 8080
+      targetPort: 8100
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ARCdatabase
+spec:
+  selector:
+    matchLabels:
+      app: collegedatabase
+  template:
+    metadata:
+      labels:
+        app: collegedatabase
+    spec:
+      containers:
+        - name: ARCdatabase
+          image: ahteshamdocker/app
+          ports:
+            - containerPort: 8100
+          imagePullPolicy: Never
