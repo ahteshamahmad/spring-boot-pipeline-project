@@ -21,13 +21,13 @@
         {
             steps {
                    
-                        sh 'mvn Dockerfile:build'
+                        sh 'mvn dockerfile:build'
                          
                   }
           }
           stage ('docker image push to Docker Hub') {
             steps {               
-                    sh 'mvn Dockerfile:push'                          
+                    sh 'mvn dockerfile:push'                          
             }
         }
     }
