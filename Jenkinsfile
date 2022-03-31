@@ -13,7 +13,7 @@
         }
         stage ('build app test') {
             steps {               
-                    sh 'mvn clean install -DskipTests=true '                                    
+                    sh 'mvn clean install '                                    
             }
         }
         
