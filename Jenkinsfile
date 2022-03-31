@@ -1,28 +1,34 @@
  pipeline {
     agent any
-    
     stages {
-        stage ('compile stage'){
-         steps {
-            withMaven(maven: 'maven_3_8_4'){
-                      sh 'mvn clean compile'
-                      }
-                      }
-                      }
-                      
-        stage('Testing stage') {
+        stage ('Checking java version') {
             steps {
-                withMaven(maven: 'maven_3_8_4'){
-                      sh 'mvn test'
-                      }
-                      }
-                      }
-                    stage ('Deployment stage'){
-                        steps {    
-                            withMaven(maven: 'maven_3_8_4'){
-                                       sh 'date'
-                                       }
-                                       }
-                                       }
-                                       }
-                                       }
+                    sh 'java -version'
+            }
+        }
+        stage ('maven version') {
+            steps {               
+                    sh 'mvn -version'                
+            }
+        }
+        stage ('build app test') {
+            steps {               
+                    sh 'mvn clean install -DskipTests=true '                                    
+            }
+        }
+        
+        stage ('docker image build')
+        {
+            steps {
+                   
+                        sh 'mvn dockerfile:build'
+                         
+                  }
+          }
+          stage ('docker image push to Docker Hub') {
+            steps {               
+                    sh 'mvn dockerfile:push'                          
+            }
+        }
+    }
+}
