@@ -14,7 +14,6 @@ public class UserDatabase {
         List<String>student=new ArrayList<>();
         student.add("Md Ahtesham");
         student.add("Md Nawaz");
-        student.add("Shashank");
         return student;
     }
     @GetMapping("/mentor")
