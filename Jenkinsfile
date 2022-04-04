@@ -21,13 +21,13 @@
         {
             steps {
                    
-                        sh 'mvn dockerfile:build'
+                        sh 'docker build -t ahteshamdocker/my-pipeline-app'
                          
                   }
           }
           stage ('docker image push to Docker Hub') {
             steps {               
-                    sh 'mvn dockerfile:push'                          
+                    sh 'docker image push ahteshamdocker/my-pipeline-app:latest'                          
             }
         }
     }
