@@ -21,7 +21,7 @@
         {
             steps {
                    
-                        sh 'docker build -t ahteshamdocker/my-pipeline-app'
+                        sh 'docker build -t ahteshamdocker/my-pipeline-app .'
                          
                   }
           }
