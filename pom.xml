@@ -11,22 +11,6 @@
 	<groupId>com.springbootproject</groupId>
 	<artifactId>spring-boot-pipeline-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<executions>
-    <execution>
-      <id>default</id>
-      <goals>
-        <goal>build</goal>
-        <goal>push</goal>
-      </goals>
-    </execution>
-  </executions>
-  <configuration>
-    <repository>${project.artifactId}</repository>
-    <tag>${project.version}</tag>
-    <buildArgs>
-      <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-    </buildArgs>
-  </configuration>
 	<name>spring-boot-pipeline-project</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
