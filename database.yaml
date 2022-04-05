@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: arcdatabase
+  name: collegedatabase1
 spec:
   selector:
-    app: collegedatabase
+    app: collegedatabase1
   ports:
     - port: 8080
       targetPort: 8100
@@ -13,19 +13,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: arcdatabase
+  name: collegedatabase1
 spec:
   selector:
     matchLabels:
-      app: collegedatabase
+      app: collegedatabase1
   template:
     metadata:
       labels:
-        app: collegedatabase
+        app: collegedatabase1
     spec:
       containers:
-        - name: arcdatabase
-          image: ahteshamdocker/pipeline-app
+        - name: collegedatabase1
+          image: ahteshamdocker/my-pipeline-app
           ports:
             - containerPort: 8100
           imagePullPolicy: Never
