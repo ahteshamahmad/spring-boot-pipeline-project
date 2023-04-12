@@ -9,33 +9,33 @@ import java.util.List;
 
 @RestController
 public class UserDatabase {
-    @GetMapping("/student")
+    @GetMapping("/freshers")
     public List<String> getStudent(){
         List<String>student=new ArrayList<>();
         student.add("Md Ahtesham");
-        student.add("Md Nawaz");
+        student.add("Debraj");
+	student.add("Sanjukta");
+	student.add("Diptanu");
         return student;
     }
     @GetMapping("/mentor")
     public List<String> getTeacher(){
         List<String>mentor=new ArrayList<>();
-        mentor.add("Deepak Kumar");
-        mentor.add("Jayanta Mukherjee");
-        mentor.add("Suman Das");
-        mentor.add("Google");
+        mentor.add("Baalaaji Natarajan");
+        mentor.add("Sampath Kumar");
+        mentor.add("Ramasubramanian Thangala Venkatachalam");
         return mentor;
     }
     @GetMapping("/HR")
         public List<String> getClassroom() {
         List<String>HR=new ArrayList<>();
-        HR.add("Soumyajit Chatterjee");
-        HR.add("Sugata Kundu");
-        HR.add("Sreetama Banerjee");
+        HR.add("Karthikeyan M");
+        HR.add("Krishnapriya Therppagan");
         return HR;
     }
     @GetMapping("/vice-president")
     public String getname(){
-        String vp="Srinivas Mukkammala";
+        String vp="Victor Johnbritto";
         return vp;
     }
 }
