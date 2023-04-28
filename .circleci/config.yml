@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build1:
     docker:
@@ -6,12 +6,11 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello world"
-  build2:
+  build:
     steps:
       - checkout
-      - run: echo "Hello Ahtesham"  
+      - run: echo "Testing"
 workflows:
-  build_and_test:
-    jobs:
-      - build1:
-      - build2:
+  jobs:
+    - build1:
+    - build2:
