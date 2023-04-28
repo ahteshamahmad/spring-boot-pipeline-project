@@ -6,11 +6,11 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello world"
-  build:
+  build2:
     steps:
       - checkout
       - run: echo "Testing"
 workflows:
   jobs:
-    - build1:
-    - build2:
+    - build1
+    - build2
