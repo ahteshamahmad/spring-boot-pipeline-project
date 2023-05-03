@@ -1,10 +1,6 @@
 version: 2.1
-workflows:
-  testing:
-    jobs:
-      - runner-test
 jobs:
-  runner-test:
+  build:
     machine: true
     resource_class: ahteshamahmad/linux_machine
     steps:
