@@ -1,12 +1,11 @@
 version: 2.1
-
 workflows:
-  build-workflow:
+  testing:
     jobs:
-      - runner
+      - runner-test
 jobs:
-  runner:
+  runner-test:
     machine: true
     resource_class: ahteshamahmad/linux_machine
     steps:
-      - run: echo "Hi! I'm on Runners!"
+      - run: echo "Hi I'm on Runners!"
