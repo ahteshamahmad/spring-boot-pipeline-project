@@ -15,11 +15,6 @@ jobs:
           name: Build Docker image
           command: |
             docker build -t kubernetes-docker-image .
-
-      # Push Docker image to a container registry
-      - run:
-          name: Push Docker image
-          command: |
             echo "realme@1234" | docker login --username "ahteshamdocker" --password-stdin
             docker push ahteshamdocker/kubernetes-docker-image
 
