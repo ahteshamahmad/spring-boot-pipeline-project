@@ -1,32 +1,33 @@
 version: 2.1
-jobs:
-  build-and-deploy:
+
+executors:
+  remote_docker_executor:
     docker:
-      - image: circleci/openjdk:11
+      - image: circleci/remote-docker:20.10.8
 
+jobs:
+  build_and_push:
+    executor: remote_docker_executor
     steps:
-      - checkout
       - setup_remote_docker:
-          version: 20.10.7
-          docker_layer_caching: true
+          version: 20.10.8
 
-      # Build Docker image
-      - run:
-          name: Build Docker image
-          command: |
-            echo "realme@1234" | docker login --username "ahteshamdocker" --password-stdin
-            docker build -t kubernetes-docker-image .
-            docker push ahteshamdocker/kubernetes-docker-image
+      - checkout
 
-      # Deploy to Kubernetes
       - run:
-          name: Deploy to Kubernetes
+          name: Login to Docker Hub
           command: |
-            kubectl apply -f database.yaml
+            echo "$realme@1234" | docker login -u "$ahteshamdocker" --password-stdin
+
+      - run:
+          name: Build and Push Docker Image
+          command: |
+            docker build -t "$ahteshamdocker/my-image:latest" .
+            docker push "$ahteshamdocker/my-image:latest"
 
 workflows:
   version: 2
-  build-and-deploy:
+  build_and_push:
     jobs:
-      - build-and-deploy
+      - build_and_push
 
