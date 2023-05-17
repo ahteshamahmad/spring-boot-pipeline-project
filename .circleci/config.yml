@@ -14,8 +14,8 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build -t kubernetes-docker-image .
             echo "realme@1234" | docker login --username "ahteshamdocker" --password-stdin
+            docker build -t kubernetes-docker-image .
             docker push ahteshamdocker/kubernetes-docker-image
 
       # Deploy to Kubernetes
