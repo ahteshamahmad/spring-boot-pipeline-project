@@ -5,6 +5,8 @@ jobs:
       - image: circleci/openjdk:11
 
     steps:
+      - setup_remote_docker:
+          version: 20.10.8
       - checkout
 
       # Build Docker image
