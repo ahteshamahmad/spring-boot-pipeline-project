@@ -17,12 +17,10 @@ jobs:
             docker build -t kubernetes-docker-image .
 
       # Push Docker image to a container registry
-      auth:
-        username: ahteshamdocker
-        password: realme@1234
       - run:
           name: Push Docker image
           command: |
+            docker login -u "$ahteshamdocker" -p "$realme@1234"
             docker push ahteshamdocker/kubernetes-docker-image
 
       # Deploy to Kubernetes
