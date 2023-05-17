@@ -1,5 +1,4 @@
 version: 2.1
-
 executors:
   remote_docker_executor:
     docker:
@@ -17,7 +16,7 @@ jobs:
       - run:
           name: Login to Docker Hub
           command: |
-            echo "$realme@1234" | docker login -u "$ahteshamdocker" --password-stdin
+            echo "realme@1234" | docker login -u "ahteshamdocker" --password-stdin
 
       - run:
           name: Build and Push Docker Image
