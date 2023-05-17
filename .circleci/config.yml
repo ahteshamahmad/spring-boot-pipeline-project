@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Push Docker image
           command: |
-            echo $realme@1234 | docker login -u $ahteshamdocker --password-stdin your-registry
+            docker login -u $ahteshamdocker -p "$realme@1234" your-registry
             docker push ahteshamdocker/kubernetes-docker-image
 
       # Deploy to Kubernetes
