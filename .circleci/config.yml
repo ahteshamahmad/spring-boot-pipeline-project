@@ -50,12 +50,6 @@ jobs:
           command: minikube start
             nohup minikube start &
       - run:
-          name: Wait for Minikube
-          command: |
-            while ! minikube status &> /dev/null; do
-              sleep 2
-            done
-      - run:
           name: Install kubectl
           command: |
             curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
