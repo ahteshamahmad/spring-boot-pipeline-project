@@ -28,4 +28,4 @@ spec:
           image: ahteshamdocker/kubernetes-image
           ports:
             - containerPort: 8000
-          imagePullPolicy: Never
+          imagePullPolicy: Always
