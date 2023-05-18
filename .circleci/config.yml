@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Deploy to Kubernetes
           command: |
-            kubectl run nginx --image=nginx --restart=Never
+            kubectl version --short
 workflows:
   version: 2
   build-master:
