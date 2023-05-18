@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: collegedatabase
-          image: ahteshamdocker/app
+          image: ahteshamdocker/kubernetes-image
           ports:
             - containerPort: 8000
           imagePullPolicy: Never
