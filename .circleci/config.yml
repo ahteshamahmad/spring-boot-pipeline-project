@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Run dokcer on specific IP_address
           command: |
-            docker run $IMAGE_NAME
+            docker run -d -p 8000:8000 $IMAGE_NAME
 workflows:
   version: 2
   build-master:
